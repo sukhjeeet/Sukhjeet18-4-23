@@ -1,3 +1,5 @@
+#empty directory
+
 shoppingCart = {}
 
 while True:
@@ -7,8 +9,9 @@ while True:
     print("C. Delete the product from the cart.")
     print("D. Quit.")
     
-    choice = input("Enter your choice: ").upper()
-    
+    choice = input("Enter your choice: ")
+
+#adding the product
     if choice == 'A':
         if len(shoppingCart) < 5:
             product = input("Enter product name: ")
@@ -17,14 +20,16 @@ while True:
             print("Product added to the cart successfully.")
         else:
             print("Cart is full.")
-    
+
+#Serching the product
     elif choice == 'B':
         product = input("Enter product name to search: ")
         if product in shoppingCart:
             print(f"{product} is found in the cart. Brand name: {shoppingCart[product]}")
         else:
             print("No product exists with this name.")
-    
+
+#Deleting the product   
     elif choice == 'C':
         product = input("Enter product name to delete: ")
         if product in shoppingCart:
@@ -36,6 +41,7 @@ while True:
         if len(shoppingCart) == 0:
             print("Cart is empty, no item is found.")
     
+#if Quiting
     elif choice == 'D':
         print("Thank you for shopping with us.")
         break
